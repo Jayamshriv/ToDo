@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private val todoList : MutableList<Model> = TODO()
+    private val todoList = ArrayList<Model>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,13 +23,6 @@ class MainActivity : AppCompatActivity() {
         val rvTodo = findViewById<RecyclerView>(R.id.rvTodo)
         val addBtnn = findViewById<Button>(R.id.addBtn)
         val etTask= findViewById<EditText>(R.id.etTask)
-
-        todoList.add(Model("dfghjkl",false))
-
-        todoList.add(Model("dfghjkl",false))
-        todoList.add(Model("dfghjkl",false))
-        todoList.add(Model("dfghjkl",false))
-        todoList.add(Model("dfghjkl",false))
 
         rvTodo.layoutManager = LinearLayoutManager(this)
         val toDoAdapterVar = toDoAdapter(todoList)

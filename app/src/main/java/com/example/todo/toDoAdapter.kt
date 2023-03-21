@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class toDoAdapter(
-    var todoModel: MutableList<Model>
+    var todoModel: ArrayList<Model>
 ) : RecyclerView.Adapter<toDoAdapter.todoHolder>() {
 
 
