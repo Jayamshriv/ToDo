@@ -11,7 +11,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="4"
             android:layout_margin="6dp"
-            android:text="text"
+            android:text="@string/text"
             android:textSize="24sp" />
 
         <CheckBox

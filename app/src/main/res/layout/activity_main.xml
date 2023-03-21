@@ -15,7 +15,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:hint="Enter Task"
+            android:hint="@string/enter_task"
             android:inputType="textCapWords"
             android:minHeight="48dp" />
 
@@ -25,8 +25,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/black"
-            android:text="Add"
+            android:backgroundTint="#8B6E82CF"
+            android:text="@string/add"
             android:textColor="@color/white" />
     </LinearLayout>
 
@@ -36,7 +36,9 @@
         android:id="@+id/rvTodo"
         android:layout_marginTop="64dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+</androidx.recyclerview.widget.RecyclerView>
 
 
 </FrameLayout>
