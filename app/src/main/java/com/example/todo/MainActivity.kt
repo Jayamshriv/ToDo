@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val etTask= findViewById<EditText>(R.id.etTask)
 
         todoList.add(Model("dfghjkl",false))
-        todoList.add(Model("dfghjkl",false))
+
         todoList.add(Model("dfghjkl",false))
         todoList.add(Model("dfghjkl",false))
         todoList.add(Model("dfghjkl",false))
