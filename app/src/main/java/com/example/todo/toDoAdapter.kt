@@ -14,11 +14,8 @@ class toDoAdapter(
 ) : RecyclerView.Adapter<toDoAdapter.todoHolder>() {
 
 
-    class todoHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val textView=itemView.findViewById<TextView>(R.id.textView)
-        val checkedBox = itemView.findViewById<CheckBox>(R.id.checkBox)
+    inner class todoHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): todoHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.todo_items,parent,false)
@@ -28,8 +25,8 @@ class toDoAdapter(
 
     override fun onBindViewHolder(holder: todoHolder, position: Int) {
 
-        holder.textView.text = todoModel[position].taskText
-        holder.checkedBox.isChecked = todoModel[position].isChecked
+        holder.itemView.findViewById<TextView>(R.id.textView). text = todoModel[position].taskText
+        holder.itemView.findViewById<CheckBox>(R.id.checkBox).isChecked = todoModel[position].isChecked
 
     }
 
