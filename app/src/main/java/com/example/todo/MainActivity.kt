@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         rvTodo.adapter = toDoAdapterVar
 
         addBtnn.setOnClickListener{
-            val newTask = etTask.text.toString()
+            var newTask = etTask.text.toString()
 
             todoList.add(Model(newTask,false))
             toDoAdapterVar.notifyItemInserted(todoList.size- 1)
