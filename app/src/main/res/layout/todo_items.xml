@@ -22,6 +22,7 @@
             android:layout_margin="6dp"
             android:layout_weight="4"
             android:paddingLeft="6dp"
+            android:layout_gravity="center"
             android:textColor="@color/black"
             android:text="textSize"
             android:textSize="22dp" />
