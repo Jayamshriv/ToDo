@@ -19,6 +19,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+//    applicationVariants.all { variant ->
+//        variant.outputs.all {
+//            def newName = "app-debug(${variant.versionName})"
+//            outputFileName = new File(outputFileName.parent, "${newName}.apk")
+//        }
+//    }
+
     buildTypes {
         release {
 

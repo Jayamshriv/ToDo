@@ -1,30 +1,33 @@
 package com.example.todo
 
+
 import android.R.attr.action
+import android.R.attr.windowActionBar
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.appcompat.widget.Toolbar
 import com.google.gson.Gson
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import android.widget.Toolbar
+//import android.widget.Toolbar
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.TypedArrayUtils.getString
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.reflect.TypeToken
-import java.lang.reflect.Type
 
 
 class MainActivity : AppCompatActivity() {
 
-
     private var todoList = ArrayList<Model>()
+   // private lateinit var binding: ActivityMainBinding
 
-
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -34,23 +37,27 @@ class MainActivity : AppCompatActivity() {
 /*
 * Action Bar
 */
-        val actionBar = supportActionBar
 
-        actionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
-        actionBar?.setCustomView(R.layout.todo_action_bar)
+//
+//        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+//        setSupportActionBar(toolbar)
+//
+
+
+//
+//        val actionBar = supportActionBar
+//        //action
+//        actionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
+//        actionBar?.setCustomView(R.layout.todo_action_bar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayUseLogoEnabled(true)
+
+
 
 //        val customView = actionBar?.customView?.parent as Toolbar
 //        toolbar.setContentInsetsAbsolute(0, 0)
 //        toolbar.contentInsetEnd
 //        toolbar.setPadding(0, 0, 0, 0)
-
-        actionBar?.setDisplayShowHomeEnabled(true)
-        actionBar?.setDisplayUseLogoEnabled(true)
-
-        fun onCreateOptionsMenu(menu: Menu?): Boolean {
-            menuInflater.inflate(R.menu.action_bar, menu)
-            return true
-        }
 
 
         /*
@@ -110,6 +117,12 @@ class MainActivity : AppCompatActivity() {
 
 
 //    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.action_bar, menu)
+        return true
+    }
     private fun saveTasks() {
         val prefs = getSharedPreferences("todo", Context.MODE_PRIVATE)
         val editor = prefs.edit()

@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#E6DFEA">
+    android:background="#E6DFEA"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/action_bar"
+        layout="@layout/todo_action_bar"
+        android:layout_width="TODO"
+        android:layout_height="TODO"
+        android:layout_alignParentTop="true" />
 
     <LinearLayout
+        android:id="@+id/lLaddTask"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/action_bar">
 
         <EditText
             android:id="@+id/etTask"
@@ -32,14 +42,15 @@
     </LinearLayout>
 
 
-<androidx.recyclerview.widget.RecyclerView
-
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTodo"
-        android:layout_marginTop="64dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lLaddTask"
+        android:layout_marginTop="6dp">
 
-</androidx.recyclerview.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 
-</FrameLayout>
+
+</RelativeLayout>
